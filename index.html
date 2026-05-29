@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>
+                <i class="fa-solid fa-list-check"></i>
+                My Tasks
+            </h2>
+            <ul>
+                <li class="active">All Tasks</li>
+                <li>Pending</li>
+                <li>Completed</li>
+            </ul>
+            <div class="sidebar-buttons">
+                <button id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </button>
+                <button id="langBtn">
+                    FR
+                </button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <h1 id="title">
+                CRUB To Do List
+            </h1>
+            <div class="task-input">
+                <input 
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter new task..."
+                >
+                <button id="addTaskBtn">
+                    Add Task
+                </button>
+            </div>
+            <div id="taskList"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
