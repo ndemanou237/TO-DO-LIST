@@ -26,13 +26,13 @@ langBtn.addEventListener("click", ()=>{
     french = !french;
     if(french){
         title.textContent = "Liste des tâches CRUD";
-        taksInput.placeholder = "Entrez une nouvelle tâche...";
+        taskInput.placeholder = "Entrez une nouvelle tâche...";
         addTaskBtn.textContent = "Ajouter";
         langBtn.innerHTML = "EN";
     }
     else{
         title.textContent = "CRUD To Do List";
-        taksInput.placeholder = "Enter a new task...";
+        taskInput.placeholder = "Enter a new task...";
         addTaskBtn.textContent = "Add Task";
         langBtn.innerHTML = "FR";
 
@@ -65,4 +65,24 @@ addTaskBtn.addEventListener("click", ()=>{
     `;
     taskList.appendChild(taskDiv);
     taskInput.value = "";
+
+    const completeBtn = taskDiv.querySelector(".complete-btn");
+    completeBtn.addEventListener("click", ()=>{
+        taskDiv.classList.toggle("completed");
+    });
+
+    const deleteBtn = taskDiv.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", ()=>{
+        taskDiv.remove();
+    });
+
+    const editBtn = taskDiv.querySelector(".edit-btn");
+    editBtn.addEventListener("click", ()=>{
+        const taskTitle = taskDiv.querySelector("h3");
+        const newTask = prompt(french ? "Modifier votre tâche" : "Edit your task", taskTitle.textContent);
+        if(newTask !== null && newTask.trim() !== ""){
+        taskTitle.textContent = newTask
+        }
+    });
+    
 })
